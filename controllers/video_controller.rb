@@ -1,4 +1,4 @@
-class PostsController < Sinatra::Base
+class VideosController < Sinatra::Base
 
 	configure :development do
 		register Sinatra::Reloader
