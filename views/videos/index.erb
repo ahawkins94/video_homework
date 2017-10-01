@@ -3,6 +3,7 @@
 <% @videos.each do |video| %>
 
 	<h2>Video: <%= video.title %></h2>
+	<p><iframe src="<%=video.url %>"></iframe></p>
 	<p><%= video.description %></p>
 	<p><%= video.genre %></p>
 	<a href="videos/<%= video.id %>">View</a>
