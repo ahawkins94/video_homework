@@ -8,6 +8,9 @@ class VideosController < Sinatra::Base
 
 	set :views, Proc.new { File.join(root, 'views') }
 
-	
-
+	get '/videos' do
+		@page_header = "All Videos"
+		@videos = Video.all
+		erb :"videos/index"
+	end
 end
