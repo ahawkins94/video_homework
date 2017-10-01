@@ -1,6 +1,6 @@
 class Video
 
-	attr_accessor :title, :description, :url, :genre
+	attr_accessor :id, :title, :description, :url, :genre
 
 	def self.open_connection
 		PGconn.connect( dbname: "video_list")
@@ -9,7 +9,7 @@ class Video
 #index
 	def self.all
 		conn = self.open_connection
-		sql = "SELECT * FROM video;"
+		sql = "SELECT * FROM video"
 
 		results = conn.exec(sql)
 
@@ -25,7 +25,7 @@ class Video
 
 	    video.id = video_data['id']
 	    video.title = video_data['title']
-	    video.body = video_data['description']
+	    video.description = video_data['description']
 	    video.url = video_data['url']
 	    video.genre = video_data['genre']
 

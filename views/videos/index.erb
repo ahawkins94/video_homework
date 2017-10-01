@@ -3,9 +3,9 @@
 <% @videos.each do |video| %>
 
 	<h2>Video: <%= video.title %></h2>
-	<p><%= description.body %></p>
-	<p><%= genre.body %></p>
-	<a href="posts/<%= video.id %>">View</a>
-	<a href="posts/<%= video.id %>/edit">Edit</a>
+	<p><%= video.description %></p>
+	<p><%= video.genre %></p>
+	<a href="videos/<%= video.id %>">View</a>
+	<a href="videos/<%= video.id %>/edit">Edit</a>
 
 <% end %>
