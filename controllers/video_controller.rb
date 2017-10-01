@@ -13,4 +13,9 @@ class VideosController < Sinatra::Base
 		@videos = Video.all
 		erb :"videos/index"
 	end
+
+	get '/videos/new' do
+		erb :"videos/new"
+	end
+
 end
