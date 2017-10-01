@@ -44,7 +44,7 @@ class Video
 
 #new/update
 	def save
-		conn = Post.open_connection
+		conn = Video.open_connection
 		if (!self.id)
 			sql = "INSERT INTO video (title, description, url, genre) VALUES ( '#{self.title}', '#{self.description}', '#{self.url}', '#{self.genre}')"
 		else
@@ -54,6 +54,5 @@ class Video
 		conn.exec(sql)
 	end
 
-end
 
 end
