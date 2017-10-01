@@ -31,6 +31,7 @@ class Video
 
 	    video
 
+  	end  
 #show
 	def self.find id
 		conn = self.open_connection
@@ -52,7 +53,7 @@ class Video
 		end
 
 		conn.exec(sql)
-	end
 
+	end
 
 end

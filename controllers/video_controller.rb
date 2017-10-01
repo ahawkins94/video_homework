@@ -41,4 +41,16 @@ class VideosController < Sinatra::Base
 		erb :"videos/edit"
 	end
 
+	put "/videos/:id" do
+		video = Video.find(params[:id])
+		video.title = params[:title]
+		video.description = params[:description]
+		video.url = params[:url]
+		video.genre = params[:genre]
+		video.save
+
+		redirect "/video/#{video.id}"
+
+	end
+
 end
