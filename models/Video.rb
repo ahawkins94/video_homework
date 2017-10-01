@@ -56,4 +56,15 @@ class Video
 
 	end
 
+#delete
+
+	def self.destroy id
+		conn = self.open_connection
+
+		sql = "DELETE FROM video WHERE id = #{id}"
+
+		conn.exec(sql)
+
+	end
+
 end
