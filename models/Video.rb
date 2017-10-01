@@ -31,8 +31,18 @@ class Video
 
 	    video
 
-	
+#show
+	def self.find id
+		conn = self.open_connection
+		sql = "SELECT * FROM video WHERE id = #{id}"
+		videos = conn.exec(sql)
 
+		video = self.hydrate videos[0]
+
+		video
+	end	
+
+#new/update
 	def save
 		conn = Post.open_connection
 		if (!self.id)
@@ -43,5 +53,7 @@ class Video
 
 		conn.exec(sql)
 	end
+
+end
 
 end

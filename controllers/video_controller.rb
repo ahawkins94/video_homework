@@ -18,4 +18,27 @@ class VideosController < Sinatra::Base
 		erb :"videos/new"
 	end
 
+	get '/videos/:id' do
+		id = params[:id].to_i
+		@video = Video.find id
+		@page_header = "Video #{id+1}"
+		erb :"videos/show"	
+	end
+
+	post "/videos" do
+		new_video = Video.new
+		new_video.title = params[:title]	
+		new_video.description = params[:description]	
+		new_video.url = params[:url]	
+		new_video.genre = params[:genre]	
+		new_video.save
+
+		redirect '/videos'
+	end
+
+	get "/videos/:id/edit" do
+ 		@video = Video.find(params[:id])		
+		erb :"videos/edit"
+	end
+
 end
